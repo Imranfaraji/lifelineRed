@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-const PrivateRoute = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+import { Navigate, useLocation } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
+
+const PrivetRouter = ({children}) => {
+    const {user,loading}=useContext(AuthContext)
+    const location=useLocation()
+   if(loading){
+    return <span className="loading loading-bars loading-xl"></span>
+   }
+   if(!user){
+    return <Navigate state={location?.pathname} to='/login'></Navigate>
+   }
+   return children
 };
 
-export default PrivateRoute;
+export default PrivetRouter;
