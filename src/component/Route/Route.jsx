@@ -5,6 +5,7 @@ import {
 import Root from "../Root/Root";
 import Home from "../../pages/Home/Home";
 import ErrorPage from "../../pages/ErrorPage/errorPage";
+import SignUp from "../../pages/SignUp/SignUp";
 
 
  export const router = createBrowserRouter([
@@ -14,6 +15,7 @@ import ErrorPage from "../../pages/ErrorPage/errorPage";
       element: <Root></Root>,
       children:[
         {index:true, Component:Home},
+        {path:'/signup', Component:SignUp}
       ]
     },
   ]);

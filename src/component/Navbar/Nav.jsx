@@ -92,7 +92,7 @@ const Nav = () => {
             (
             <>
              <Link className="cta" to={'/login'}>Login</Link>
-             <Link className="cta" to={'/registration'}>SignUp</Link>
+             <Link className="cta" to={'/signup'}>SignUp</Link>
             </>
             )
         }
