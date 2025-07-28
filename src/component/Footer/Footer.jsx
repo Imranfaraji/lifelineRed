@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="space-y-2">
           <Link to={"/"} className="flex items-center  justify-start ">
             
-              <h1 className="text-2xl font-bold italic">Share<span className="text-orange-300 text-2xl md:text-3xl">Bite</span>{" "}</h1>
+              <h1 className="md:text-4xl text-2xl font-extrabold text-gray-700">Lifeline<span className="text-red-700">Red</span></h1>
             
           </Link>
 
