@@ -4,7 +4,7 @@ import { AuthContext } from "../Context/AuthContext";
 
 
 const Nav = () => {
-    const {user}=useContext(AuthContext)
+    const {user,handlesignOut}=useContext(AuthContext)
   return (
     <div className="w-full bg-white shadow-sm">
         <div className="navbar responsive">
@@ -85,7 +85,7 @@ const Nav = () => {
             ?
             (
             <>
-            <button className="cta">LogOut</button>
+            <button onClick={()=>handlesignOut()} className="cta">LogOut</button>
             </>
             )
             :
