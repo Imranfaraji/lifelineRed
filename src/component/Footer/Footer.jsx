@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   FaFacebook,
   FaInstagramSquare,
@@ -8,8 +8,11 @@ import {
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { Link } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
+import { NavLink } from "react-router";
 
 const Footer = () => {
+  const {user}=useContext(AuthContext)
   return (
     <div className="bg-neutral w-full">
       <footer className=" w-full px-2 md:px-0 md:w-11/12 md:mx-auto text-neutral-content p-10 flex flex-col md:flex-row md:items-center gap-2 justify-between">
@@ -30,18 +33,23 @@ const Footer = () => {
 
         <div className="md:space-y-2">
           <div className="flex items-center gap-1 font-bold text-lg">
-            <FaPhone></FaPhone>
-            <p>+880 1918513419</p>
-          </div>
-
-          <div className="flex items-center gap-1 font-bold text-lg">
-            <IoMdMail />
-            <p>imranfaraji880@gmail.com</p>
-          </div>
-
-          <div className="flex items-center gap-1 font-bold text-lg">
-            <FaLocationDot />
-            <p>Pro. 3 no. word, Borhanuddin Bhola.</p>
+            <ul className="text-white">
+            <li>
+              <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/'}>Home</NavLink>
+            </li>
+            <li>
+              <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/donorrequest'}>Donation requests</NavLink>
+            </li>
+            <li>
+              <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/blog'}>Blog</NavLink>
+            </li>
+           {
+            user&& <li>
+              <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/funding'}>Funding</NavLink>
+            </li>
+           }
+            
+          </ul>
           </div>
         </div>
 
