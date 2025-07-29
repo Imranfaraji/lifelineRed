@@ -11,6 +11,7 @@ import DonorRequest from "../../pages/DonorRequest/DonorRequest";
 import Blog from "../../pages/Blog/Blog";
 import Funding from "../../pages/Funding/Funding";
 import SearchDonor from "../../pages/SearchDonor/SearchDonor";
+import DashboardLayOut from "../../pages/DashboardLayOut/DashboardLayOut";
 
 
  export const router = createBrowserRouter([
@@ -26,6 +27,7 @@ import SearchDonor from "../../pages/SearchDonor/SearchDonor";
         {path:'/blog',Component: Blog},
         {path:'/funding',Component: Funding},
         {path:'/searchdonor',Component: SearchDonor},
+        {path:'/dashboard',Component:DashboardLayOut}
       ]
     },
   ]);
