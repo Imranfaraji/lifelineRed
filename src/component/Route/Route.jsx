@@ -15,6 +15,7 @@ import DashboardLayOut from "../../pages/DashboardLayOut/DashboardLayOut";
 import DashboardHome from "../DashboardComponent/DashboardHome/DashboardHome";
 import PrivateRoute from './PrivateRoute'
 import Profile from "../../pages/DashbordPage/Profile/Profile";
+import CreateDonationRequest from "../DashboardComponent/DonorDashboard/CreateDonationRequest";
 
 
  export const router = createBrowserRouter([
@@ -33,7 +34,8 @@ import Profile from "../../pages/DashbordPage/Profile/Profile";
         {path:'/dashboard',element:<PrivateRoute><DashboardLayOut></DashboardLayOut></PrivateRoute>,
           children:[
             {index:true ,Component:DashboardHome},
-            {path:'myprofile' , Component:Profile}
+            {path:'myprofile' , Component:Profile},
+            {path:'create-donation-request', Component:CreateDonationRequest}
           ]
         }
       ]

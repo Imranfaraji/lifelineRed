@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
 const Nav = () => {
   const { user, handlesignOut } = useContext(AuthContext);
+
+  const [toggle,setToggle]=useState(false)
   return (
     <div className="w-full bg-white shadow-sm">
       <div className="navbar responsive">
@@ -77,11 +79,8 @@ const Nav = () => {
               {/* change popover-1 and --anchor-1 names. Use unique names for each dropdown */}
               {/* For TSX uncomment the commented types below */}
               <button
-                className=""
-                popoverTarget="popover-1"
-                style={
-                  { anchorName: "--anchor-1" } /* as React.CSSProperties */
-                }
+                className="cursor-pointer"
+                onClick={()=>setToggle(!toggle)}
               >
                 <div className="avatar">
                   <div className=" ring-offset-base-100 h-12 w-12 rounded-full ring-2 ring-offset-2">
@@ -91,12 +90,8 @@ const Nav = () => {
               </button>
 
               <ul
-                className="dropdown menu mt-3 p-2 space-y-2 rounded-box bg-base-100 shadow-sm"
-                popover="auto"
-                id="popover-1"
-                style={
-                  { positionAnchor: "--anchor-1" } /* as React.CSSProperties */
-                }
+                className={`absolute p-2  space-y-2 rounded-box bg-base-100 shadow-sm ${toggle?'right-10 top-18':'-top-75'}`}
+                
               >
                 <li>
                   <Link to={'/dashboard'}>Dashbord</Link>

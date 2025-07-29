@@ -4,10 +4,10 @@ import Sidebar from '../../component/DashboardComponent/Sidebar';
 
 const DashboardLayOut = () => {
     return (
-        <div className='flex md:flex-row flex-col'>
+        <div className='flex  md:flex-row flex-col items-stretch '>
             <title>dashboard</title>
 
-            <aside className='w-'>
+            <aside className='bg-gray-800'>
 
                 <Sidebar></Sidebar>
 

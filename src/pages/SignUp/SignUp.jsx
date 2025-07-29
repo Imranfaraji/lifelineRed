@@ -17,16 +17,18 @@ const SignUp = () => {
   
   const {createUser,UpdateUserProfile} = useContext(AuthContext);
 
-  const [districts,setDistricts]=useState([])
-  const [upajelas,setUpajelas]=useState([])
-  const [districtId,setDistrictId]=useState('')
-
-  const [districtName,setDistrictName]=useState('')
+ 
   
 
   const [errore, setError] = useState("");
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
+
+   const [districts,setDistricts]=useState([])
+  const [upajelas,setUpajelas]=useState([])
+  const [districtId,setDistrictId]=useState('')
+
+  const [districtName,setDistrictName]=useState('')
 
  const districtFilter=districts.filter(disFil=>disFil.name===districtName)
 

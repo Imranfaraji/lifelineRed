@@ -22,7 +22,7 @@ const Sidebar = () => {
          </div>
 
          <div className={
-            `${isOpen?'block':'hidden'} md:block bg-gray-800 text-white w-full md:min-h-screen p-4 space-y-3`
+            `${isOpen?'block':'hidden'} md:block min-h-screen text-white w-full  p-4 space-y-3`
          }>
 
             <ul>
