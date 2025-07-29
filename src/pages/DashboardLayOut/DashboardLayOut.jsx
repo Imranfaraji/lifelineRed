@@ -13,7 +13,7 @@ const DashboardLayOut = () => {
 
             </aside>
 
-            <div>
+            <div className='responsive'>
                 <Outlet></Outlet>
             </div>
             

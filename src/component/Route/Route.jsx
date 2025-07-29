@@ -12,6 +12,9 @@ import Blog from "../../pages/Blog/Blog";
 import Funding from "../../pages/Funding/Funding";
 import SearchDonor from "../../pages/SearchDonor/SearchDonor";
 import DashboardLayOut from "../../pages/DashboardLayOut/DashboardLayOut";
+import DashboardHome from "../DashboardComponent/DashboardHome/DashboardHome";
+import PrivateRoute from './PrivateRoute'
+import Profile from "../../pages/DashbordPage/Profile/Profile";
 
 
  export const router = createBrowserRouter([
@@ -25,9 +28,14 @@ import DashboardLayOut from "../../pages/DashboardLayOut/DashboardLayOut";
         {path:'/login',Component: Login},
         {path:'/donorrequest',Component: DonorRequest},
         {path:'/blog',Component: Blog},
-        {path:'/funding',Component: Funding},
+        {path:'/funding',element:<PrivateRoute><Funding></Funding></PrivateRoute>},
         {path:'/searchdonor',Component: SearchDonor},
-        {path:'/dashboard',Component:DashboardLayOut}
+        {path:'/dashboard',element:<PrivateRoute><DashboardLayOut></DashboardLayOut></PrivateRoute>,
+          children:[
+            {index:true ,Component:DashboardHome},
+            {path:'myprofile' , Component:Profile}
+          ]
+        }
       ]
     },
   ]);

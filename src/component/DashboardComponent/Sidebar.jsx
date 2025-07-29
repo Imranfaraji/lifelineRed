@@ -25,8 +25,13 @@ const Sidebar = () => {
             `${isOpen?'block':'hidden'} md:block bg-gray-800 text-white w-full md:min-h-screen p-4 space-y-3`
          }>
 
-            <NavLink to={'/dashboard'} className={({isActive})=>isActive?'text-red-500 font-bold text-sm':'block text-sm text-white'}>Dashboard Home</NavLink>
-            <NavLink to={'/dashboard/myprofile'} className={({isActive})=>isActive?'text-red-500 font-bold text-sm':'block text-sm text-white'}>My Profile</NavLink>
+            <ul>
+                <li><NavLink to={'/dashboard'} className={({isActive})=>isActive?'text-blue-500 font-bold text-sm':'block text-sm text-white'}>Dashboard Home</NavLink>
+            </li>
+            <li>
+                <NavLink to={'/dashboard/myprofile'} className={({isActive})=>isActive?'text-red-500 font-bold text-sm':'block text-sm text-white'}>My Profile</NavLink>
+            </li>
+            </ul>
 
 
             {
