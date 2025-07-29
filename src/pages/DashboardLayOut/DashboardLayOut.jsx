@@ -7,13 +7,13 @@ const DashboardLayOut = () => {
         <div className='flex md:flex-row flex-col'>
             <title>dashboard</title>
 
-            <aside >
+            <aside className='w-'>
 
                 <Sidebar></Sidebar>
 
             </aside>
 
-            <div className='responsive'>
+            <div className='responsive flex-1'>
                 <Outlet></Outlet>
             </div>
             
