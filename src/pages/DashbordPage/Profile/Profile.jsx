@@ -3,17 +3,17 @@ import { AuthContext } from '../../../component/Context/AuthContext';
 import useAxiosSecure from '../../../utilitis/Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Loading from '../../Loading/Loading';
-import useAxiosPublic from '../../../utilitis/Hooks/useAxiosPublic';
+
 import { toast } from 'react-toastify';
 
 const Profile = () => {
 
     const {user}=useContext(AuthContext)
-    const axiosPublic=useAxiosPublic()
+    
     const axiosSecure=useAxiosSecure()
     const [isEditable,setIsEditable]=useState(false)
     const [formData,setFormData]=useState({})
-    console.log(formData)
+    
 
     const {data:profile={},isPending,refetch}=useQuery({
         queryKey:['user-profile',user?.email],
@@ -35,9 +35,9 @@ const Profile = () => {
     const handleSubmit=async (e)=>{
         e.preventDefault();
         try{
-           const res=await axiosPublic.put(`/update-profile?email=${user?.email}`,formData)
+           const res=await axiosSecure.put(`/update-profile?email=${user?.email}`,formData)
 
-           if(res.data.modifyCount>0){
+           if(res.data.modifiedCount>0){
             setIsEditable(false)
             refetch()
             toast.success('Profile Update successfullu!')
