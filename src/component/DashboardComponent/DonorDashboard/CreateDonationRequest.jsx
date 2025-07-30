@@ -3,6 +3,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthContext';
 import useAxiosPublic from '../../../utilitis/Hooks/useAxiosPublic';
 import { toast } from 'react-toastify';
+import { useQuery } from '@tanstack/react-query';
+import useAxiosSecure from '../../../utilitis/Hooks/useAxiosSecure';
+import Loading from '../../../pages/Loading/Loading';
 
 
 const CreateDonationRequest = () => {
@@ -10,6 +13,8 @@ const CreateDonationRequest = () => {
     const {user}=useContext(AuthContext)
 
     const axiosPublic=useAxiosPublic()
+
+    const axiosSecure=useAxiosSecure()
 
     
 
@@ -19,6 +24,7 @@ const CreateDonationRequest = () => {
        const [districts,setDistricts]=useState([])
       const [upajelas,setUpajelas]=useState([])
       const [districtId,setDistrictId]=useState('')
+      const [userData,setUserData]=useState({})
     
       const [districtName,setDistrictName]=useState('')
     
@@ -41,6 +47,19 @@ const CreateDonationRequest = () => {
         })
       },[setDistricts,setUpajelas,districtId])
 
+      const {data:profile={},isPending}=useQuery({
+        queryKey:['user-profile',user?.email],
+        enabled:!! user?.email,
+        queryFn: async ()=>{
+            const res=await axiosSecure.get(`/users-role?email=${user?.email}`);
+            setUserData(res.data)
+            return res.data
+        }
+    });
+
+    
+    
+
 
     
 
@@ -55,6 +74,11 @@ const CreateDonationRequest = () => {
         const now=new Date()
         requestData.requestTime=now.toISOString()
 
+        if(userData.status !=="active"){
+          toast.error('something went wrong')
+          return
+        }
+
 
         axiosPublic.post('/requests',requestData).then(res=>{
             if(res.data.insertedId){
@@ -63,6 +87,8 @@ const CreateDonationRequest = () => {
                     }
         })
     }
+
+    if(isPending) return <Loading></Loading>
 
     
 

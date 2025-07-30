@@ -68,7 +68,7 @@ const DashboardHome = () => {
             <div className="overflow-x-auto mt-10 rounded-box border border-base-content/5 bg-base-100">
               <table className="table ">
                 {/* head */}
-                <thead>
+                <thead className="bg-red-600 text-white">
                   <tr>
                     <th>Index</th>
                     <th>recipient name</th>
@@ -116,7 +116,7 @@ const DashboardHome = () => {
 
               
             </div>
-            <div className="w-full text-center mt-10">
+            <div className="w-full text-center mt-10 mb-4">
                 <Link to={'/dashboard/my-donation-requests'} className="cta">See all</Link>
             </div>
 
