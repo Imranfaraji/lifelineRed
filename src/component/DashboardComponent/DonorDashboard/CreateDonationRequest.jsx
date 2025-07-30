@@ -170,7 +170,7 @@ const CreateDonationRequest = () => {
              <label className=" text-sm font-bold text-gray-800">Hospital name</label>
             <input
               type="text"
-              name="Hospital name"
+              name="hospitalName"
               required
               className="input text-red-400 text-sm font-medium w-full"
               placeholder="Hospital name"

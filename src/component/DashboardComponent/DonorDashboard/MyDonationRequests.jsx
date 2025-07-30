@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../../utilitis/Hooks/useAxiosPublic';
 import { toast } from 'react-toastify';
 import Loading from '../../../pages/Loading/Loading';
+import { Link } from 'react-router';
 
 const MyDonationRequests = () => {
     const {user}=useContext(AuthContext)
@@ -103,7 +104,7 @@ const MyDonationRequests = () => {
                         </th>
                         <th className="space-x-1">
                             
-                                    <button className="text-xs p-1 bg-green-600 text-white cursor-pointer rounded">Edit</button>
+                                    <Link to={`/dashboard/request-details/${topreq._id}`} className='text-xs p-1 bg-green-600 text-white cursor-pointer rounded'>Edit</Link>
 
                                     <button onClick={()=>{
                                         setModalId(topreq._id)
