@@ -19,7 +19,7 @@ const Profile = () => {
         queryKey:['user-profile',user?.email],
         enabled:!! user?.email,
         queryFn: async ()=>{
-            const res=await axiosSecure.get(`users-role?email=${user?.email}`);
+            const res=await axiosSecure.get(`/users-role?email=${user?.email}`);
             setFormData(res.data)
             return res.data
         }

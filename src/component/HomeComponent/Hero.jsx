@@ -24,7 +24,7 @@ const Hero = () => {
             Donate Blood,{" "}
             <motion.span
               animate={{
-                color: ["#50cc0d", "#33ff33", "#5ff60e"],
+                color: ["3F59987", "#DB715C", "#B54E3A"],
                 transition: { duration: 4, repeat: Infinity },
               }}
             >
@@ -49,7 +49,7 @@ const Hero = () => {
             transition={{duration:3, ease:'easeOut'}}
           className="flex items-center flex-col space-y-2">
             
-           <div className="mt-3">
+           <div className="mt-3 space-x-2">
              <Link
               className="border hover:bg-red-900 px-3 py-2 "
               to={"/searchdonor"}

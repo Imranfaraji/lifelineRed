@@ -83,7 +83,7 @@ const Nav = () => {
                 onClick={()=>setToggle(!toggle)}
               >
                 <div className="avatar">
-                  <div className=" ring-offset-base-100 h-12 w-12 rounded-full ring-2 ring-offset-2">
+                  <div className=" ring-offset-base-100 h-10 w-10 rounded-full ring-2 ring-offset-2">
                     <img src={user?.photoURL} />
                   </div>
                 </div>
