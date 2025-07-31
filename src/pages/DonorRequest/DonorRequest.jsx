@@ -16,7 +16,7 @@ const DonorRequest = () => {
     }
   })
 
-  console.log(data)
+  
 
   if(isLoading) return <p className='tex-center'>Loading......</p>
   if(error) return  <p className='text-center text-red-600'>error fetching data</p>

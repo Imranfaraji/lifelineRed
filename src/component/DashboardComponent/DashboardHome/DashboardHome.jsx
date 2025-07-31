@@ -8,6 +8,9 @@ import { AuthContext } from "../../Context/AuthContext";
 import useAxiosPublic from "../../../utilitis/Hooks/useAxiosPublic.jsx";
 import { toast } from "react-toastify";
 import { Link } from "react-router";
+import { FaUser } from "react-icons/fa";
+import { ImAddressBook } from "react-icons/im";
+import { FaDonate } from "react-icons/fa";
 
 const DashboardHome = () => {
   const { role, isLoading } = useRole();
@@ -27,6 +30,17 @@ const DashboardHome = () => {
       return res.data;
     },
   });
+
+  const {data}=useQuery({
+    queryKey:["admin-profile",user?.email],
+    enabled:!!user?.email,
+    queryFn:async ()=>{
+      const res= await axiosSecure.get('/admin-state')
+      return res.data
+    }
+
+  })
+  
 
   const handleStatue = (id, newStatus) => {
     axiosPublic
@@ -53,12 +67,46 @@ const DashboardHome = () => {
   if (isPending) return <Loading></Loading>;
 
   if (isLoading) return <Loading></Loading>;
+  
   return (
     <div>
       <Welcome></Welcome>
 
       <div>
-        {role == "admin" && <div></div>}
+        {role == "admin" && <div className="flex flex-col items-center justify-center gap-8 md:flex-row">
+
+          <div className="bg-white rounded-md shadow hover:shadow-2xl p-16 flex gap-4 items-center justify-center">
+            <FaUser className="w-15 h-15"></FaUser>
+
+            <div>
+              <h1 className="text-2xl font-bold">Total Users</h1>
+              <p className="text-center text-xl font-bold">{data?.totalUser}</p>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-md shadow hover:shadow-2xl p-16 flex gap-4 items-center justify-center">
+            <ImAddressBook className="w-15 h-15"></ImAddressBook>
+
+            <div>
+              <h1 className="text-2xl font-bold">Total Donation Request</h1>
+              <p className="text-center text-xl font-bold">{data?.totalrequest}</p>
+            </div>
+          </div>
+          <div className="bg-white rounded-md shadow hover:shadow-2xl p-16 flex gap-4 items-center justify-center">
+            <FaDonate className="w-15 h-15"></FaDonate>
+
+            <div>
+              <h1 className="text-2xl font-bold">Total Fund</h1>
+              <p className="text-center text-xl font-bold">$ 500 </p>
+            </div>
+          </div>
+          
+          
+          </div>}
+
+
+
+
         {role == "donor" && topRequest && topRequest.length > 0 && (
           <div>
             <h1 className="text-3xl font-bold text-gray-800 text-center">

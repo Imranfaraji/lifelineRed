@@ -38,8 +38,8 @@ const Sidebar = () => {
                 role==='admin' &&(
                     <ul>
                      <li><NavLink to={'/dashboard/allusers'} className={({isActive})=>isActive?'text-red-500 font-bold text-sm':'block text-sm text-white'}>All Users</NavLink></li>
-                     <li><NavLink to={'/dashboard/all-blood-donation-request'} className={({isActive})=>isActive?'text-red-500 font-bold text-sm':'block text-sm text-white'}>All Blood Donation Request</NavLink></li>
-                     <li><NavLink to={'/dashboard/content-management'} className={({isActive})=>isActive?'text-red-500 font-bold text-sm':'block text-sm text-white'}>Content management</NavLink></li>
+                     <li><NavLink to={'/dashboard/all-blood-donation-requests'} className={({isActive})=>isActive?'text-red-500 font-bold text-sm':'block text-sm text-white'}>All Blood Donation Request</NavLink></li>
+                     <li><NavLink to={'/dashboard/content-managements'} className={({isActive})=>isActive?'text-red-500 font-bold text-sm':'block text-sm text-white'}>Content management</NavLink></li>
                     </ul>
                 )
             }

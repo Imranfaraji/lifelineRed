@@ -19,6 +19,9 @@ import CreateDonationRequest from "../DashboardComponent/DonorDashboard/CreateDo
 import MyDonationRequests from "../DashboardComponent/DonorDashboard/MyDonationRequests";
 import RequestDetails from "../DashboardComponent/DonorDashboard/RequestDetails";
 import DonerRequestDetails from "../../pages/DonorRequest/DonerRequestDetails";
+import AllUsers from "../../pages/AdminDashboard/AllUsers";
+import AllDonationRequest from "../../pages/AdminDashboard/AllDonationRequest";
+import ContentManagement from "../../pages/AdminDashboard/ContentManagement";
 
 
  export const router = createBrowserRouter([
@@ -44,6 +47,18 @@ import DonerRequestDetails from "../../pages/DonorRequest/DonerRequestDetails";
             {
               path:'request-details/:id',
               Component:RequestDetails
+            },
+            {
+              path:'allusers',
+              Component:AllUsers
+            },
+            {
+              path:'all-blood-donation-requests',
+              Component:AllDonationRequest
+            },
+            {
+              path:'content-managements',
+              Component:ContentManagement
             }
           ]
         }
