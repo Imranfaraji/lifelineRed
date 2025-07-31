@@ -5,7 +5,7 @@ import useAxiosSecure from '../../utilitis/Hooks/useAxiosSecure';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
 
-const AddBlog = ({placeholder}) => {
+const AddBlogs = ({placeholder}) => {
     const editor=useRef(null)
     const [content,setContent]=useState('')
 
@@ -29,7 +29,7 @@ const AddBlog = ({placeholder}) => {
         const blog={
             title,thumbnail,content
         }
-        axiosSecure.post('/blogs',blog).then(res=>{
+        axiosSecure.post('/volunteerblogs',blog).then(res=>{
             if(res.data.insertedId>0){
                 toast.success('Blog add to draft')
                 form.reset()
@@ -81,4 +81,4 @@ const AddBlog = ({placeholder}) => {
     );
 };
 
-export default AddBlog;
+export default AddBlogs;

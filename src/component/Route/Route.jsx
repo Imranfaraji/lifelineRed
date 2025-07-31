@@ -23,6 +23,9 @@ import AllUsers from "../../pages/AdminDashboard/AllUsers";
 import AllDonationRequest from "../../pages/AdminDashboard/AllDonationRequest";
 import ContentManagement from "../../pages/AdminDashboard/ContentManagement";
 import AddBlog from "../../pages/AdminDashboard/AddBlog";
+import AllRequest from "../../pages/Volunteer/AllRequest";
+import AddBlogs from "../../pages/Volunteer/AddBlogs";
+import ContentManagements from "../../pages/Volunteer/ContentManagements";
 
 
 
@@ -66,6 +69,17 @@ import AddBlog from "../../pages/AdminDashboard/AddBlog";
             },{
               path:'addblog',
               Component:AddBlog
+            },
+            {
+              path:'all-blood-donation-request',
+              Component:AllRequest
+            },{
+              path:'addblogs',
+              Component:AddBlogs
+            },
+            {
+              path:'content-management',
+              Component:ContentManagements
             }
            
           ]
