@@ -192,10 +192,10 @@ const CreateDonationRequest = () => {
               className=" text-red-400 text-sm font-medium bg-white p-2 rounded-sm w-full"
               
               
-              placeholder="District">
+              placeholder="Blood Group">
                     <option value="select your Blood Group" >select Blood Group</option>
                     <option value="A+" >A+</option>
-                    <option value="A_" >A-</option>
+                    <option value="A-" >A-</option>
                     <option value="B+" >B+</option>
                     <option value="B-" >B-</option>
                     <option value="AB+" >AB+</option>
