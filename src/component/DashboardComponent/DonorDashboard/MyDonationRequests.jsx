@@ -49,7 +49,9 @@ const MyDonationRequests = () => {
           })
         }
 
-        if(isPending) <Loading></Loading>
+        if(isPending)  {
+          return <Loading></Loading>
+        }
     return (
         <div>
 
