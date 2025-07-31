@@ -22,6 +22,10 @@ import DonerRequestDetails from "../../pages/DonorRequest/DonerRequestDetails";
 import AllUsers from "../../pages/AdminDashboard/AllUsers";
 import AllDonationRequest from "../../pages/AdminDashboard/AllDonationRequest";
 import ContentManagement from "../../pages/AdminDashboard/ContentManagement";
+import AddBlog from "../../pages/AdminDashboard/AddBlog";
+
+
+
 
 
  export const router = createBrowserRouter([
@@ -59,7 +63,11 @@ import ContentManagement from "../../pages/AdminDashboard/ContentManagement";
             {
               path:'content-managements',
               Component:ContentManagement
+            },{
+              path:'addblog',
+              Component:AddBlog
             }
+           
           ]
         }
       ]
