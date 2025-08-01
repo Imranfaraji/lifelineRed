@@ -8,7 +8,7 @@ import ErrorPage from "../../pages/ErrorPage/errorPage";
 import SignUp from "../../pages/SignUp/SignUp";
 import Login from "../../pages/Login/Login";
 import DonorRequest from "../../pages/DonorRequest/DonorRequest";
-import Blog from "../../pages/Blog/Blog";
+
 import Funding from "../../pages/Funding/Funding";
 import SearchDonor from "../../pages/SearchDonor/SearchDonor";
 import DashboardLayOut from "../../pages/DashboardLayOut/DashboardLayOut";
@@ -26,6 +26,8 @@ import AddBlog from "../../pages/AdminDashboard/AddBlog";
 import AllRequest from "../../pages/Volunteer/AllRequest";
 import AddBlogs from "../../pages/Volunteer/AddBlogs";
 import ContentManagements from "../../pages/Volunteer/ContentManagements";
+import Blogs from "../../pages/Blogs/Blogs";
+import Blog from "../../pages/Blogs/Blog";
 
 
 
@@ -41,10 +43,11 @@ import ContentManagements from "../../pages/Volunteer/ContentManagements";
         {path:'/signup', Component:SignUp},
         {path:'/login',Component: Login},
         {path:'/donorrequest',Component: DonorRequest},
-        {path:'/blog',Component: Blog},
+        {path:'/blog',Component: Blogs},
         {path:'/funding',element:<PrivateRoute><Funding></Funding></PrivateRoute>},
         {path:'/searchdonor',Component: SearchDonor},
         {path:'/all-pending-request/:id',element:<PrivateRoute><DonerRequestDetails></DonerRequestDetails></PrivateRoute>},
+        {path:"/blogs/:id", Component:Blog},
         {path:'/dashboard',element:<PrivateRoute><DashboardLayOut></DashboardLayOut></PrivateRoute>,
           children:[
             {index:true ,Component:DashboardHome},
