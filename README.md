@@ -8,9 +8,7 @@ A MERN stack-based blood donation platform designed to connect donors with recip
 ## 🌐 Live Site
 [👉 Click to Visit](https://sweet-tartufo-5d9cf2.netlify.app)
 
-## 👨‍💻 Admin Login
-- **Email:** `imranfaraji880@gmail.com`
-- **Password:** `Imran@2020`
+
 
 ## 🚀 Features
 
