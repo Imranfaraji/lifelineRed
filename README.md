@@ -1,12 +1,11 @@
 # 🩸 Blood Donation Application
 
 
-WebSite name: LifelineRed
+Website name: LifelineRed
 
 A MERN stack-based blood donation platform designed to connect donors with recipients, manage donation requests, and streamline organizational efforts through a role-based dashboard. Built with React, Firebase, Node.js, Express, and MongoDB.
 
-## 🌐 Live Site
-[👉 Click to Visit](https://sweet-tartufo-5d9cf2.netlify.app)
+
 
 
 
@@ -29,7 +28,12 @@ A MERN stack-based blood donation platform designed to connect donors with recip
 - **Backend:** Node.js, Express.js, MongoDB, JWT
 - **Payment:** Stripe
 - **Image Hosting:** imageBB
+- **Dependencies:** axios, tanStack Query, react toastify, 
 - **Authentication:** Firebase
+
+
+  ## 🌐 Live Site
+[👉 Click to Visit](https://sweet-tartufo-5d9cf2.netlify.app)
 
 
 
