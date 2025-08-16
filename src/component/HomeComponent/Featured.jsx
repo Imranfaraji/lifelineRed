@@ -7,7 +7,7 @@ const Featured = () => {
 
             <div className='responsive'>
 
-                <h2 className='text-3xl md:text-4xl font-bold text-center mb-6'> Why Choose Us? </h2>
+                <h2 className='text-3xl md:text-4xl font-bold text-center mb-6'> Why <span className='text-red-600'>Choose Us?</span> </h2>
 
                 <p className='text-center text-lg max-w-3xl mx-auto'>
                      We are committed to making blood donation easier, safer, and more impactful for donors and recipients alike.

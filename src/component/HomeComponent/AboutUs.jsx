@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 
 const AboutUs = () => {
   return (
-    <section className="bg-gray-50 py-16  lg:px-20">
+    <section className="bg-gray-50 py-16  ">
       <div className="responsive flex flex-col md:flex-row gap-12 items-center justify-between">
         
         {/* Left Side - Image */}
