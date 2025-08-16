@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useAxiosPublic from '../../utilitis/Hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router';
+import Loading from '../Loading/Loading';
 
 const DonorRequest = () => {
   const axiosPublic=useAxiosPublic()
@@ -18,7 +19,9 @@ const DonorRequest = () => {
 
   
 
-  if(isLoading) return <p className='tex-center'>Loading......</p>
+  if(isLoading) {
+    return <Loading></Loading>
+  }
   if(error) return  <p className='text-center text-red-600'>error fetching data</p>
 
     return (
