@@ -64,6 +64,14 @@ const DashboardHome = () => {
     });
   };
 
+  const { data: fundData = {} } = useQuery({
+    queryKey: ['total-fund'],
+    queryFn: async () => {
+      const res = await axiosSecure.get('/funds/total');
+      return res.data;
+    }
+  });
+
   if (isPending) return <Loading></Loading>;
 
   if (isLoading) return <Loading></Loading>;
@@ -97,7 +105,7 @@ const DashboardHome = () => {
 
             <div>
               <h1 className="text-2xl font-bold">Total Fund</h1>
-              <p className="text-center text-xl font-bold">$ 500 </p>
+              <p className="text-center text-xl font-bold">$ {fundData.totalAmount}</p>
             </div>
           </div>
           
@@ -233,7 +241,7 @@ const DashboardHome = () => {
 
             <div>
               <h1 className="text-2xl font-bold">Total Fund</h1>
-              <p className="text-center text-xl font-bold">$ 500 </p>
+              <p className="text-center text-xl font-bold">$ {fundData.totalAmount} </p>
             </div>
           </div>
           

@@ -7,7 +7,7 @@ const Nav = () => {
 
   const [toggle,setToggle]=useState(false)
   return (
-    <div className="w-full bg-white shadow-sm">
+    <div className="w-full bg-white fixed z-50 opacity-90 shadow-sm">
       <div className="navbar responsive">
         <div className="navbar-start ">
           <div className="dropdown">

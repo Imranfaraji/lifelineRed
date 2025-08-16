@@ -28,6 +28,7 @@ import AddBlogs from "../../pages/Volunteer/AddBlogs";
 import ContentManagements from "../../pages/Volunteer/ContentManagements";
 import Blogs from "../../pages/Blogs/Blogs";
 import Blog from "../../pages/Blogs/Blog";
+import GiveFundPage from "../../pages/Funding/GiveFundPage";
 
 
 
@@ -48,6 +49,11 @@ import Blog from "../../pages/Blogs/Blog";
         {path:'/searchdonor',Component: SearchDonor},
         {path:'/all-pending-request/:id',element:<PrivateRoute><DonerRequestDetails></DonerRequestDetails></PrivateRoute>},
         {path:"/blogs/:id", Component:Blog},
+
+
+        {path:'/funding/give', Component:GiveFundPage},
+
+        
         {path:'/dashboard',element:<PrivateRoute><DashboardLayOut></DashboardLayOut></PrivateRoute>,
           children:[
             {index:true ,Component:DashboardHome},
