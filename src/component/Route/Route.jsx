@@ -29,6 +29,7 @@ import ContentManagements from "../../pages/Volunteer/ContentManagements";
 import Blogs from "../../pages/Blogs/Blogs";
 import Blog from "../../pages/Blogs/Blog";
 import GiveFundPage from "../../pages/Funding/GiveFundPage";
+import AllDonor from "../../pages/AllDonor/AllDonor";
 
 
 
@@ -52,6 +53,10 @@ import GiveFundPage from "../../pages/Funding/GiveFundPage";
 
 
         {path:'/funding/give', Component:GiveFundPage},
+        {
+          path:'donor',
+          Component:AllDonor
+        },
 
         
         {path:'/dashboard',element:<PrivateRoute><DashboardLayOut></DashboardLayOut></PrivateRoute>,
