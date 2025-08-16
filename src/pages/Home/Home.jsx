@@ -4,6 +4,7 @@ import Featured from '../../component/HomeComponent/Featured';
 import Contact from '../../component/HomeComponent/Contact';
 import AboutUs from '../../component/HomeComponent/AboutUs';
 import HowItWorks from '../../component/HomeComponent/HowItWorks';
+import SuccessStories from '../../component/HomeComponent/SeccessStories';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <HowItWorks></HowItWorks>
             <Contact></Contact>
             <AboutUs></AboutUs>
+            <SuccessStories></SuccessStories>
         </div>
     );
 };
