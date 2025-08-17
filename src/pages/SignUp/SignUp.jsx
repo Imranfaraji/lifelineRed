@@ -163,7 +163,7 @@ const SignUp = () => {
               placeholder="District">
                     <option value="select your Blood Group" >select your Blood Group</option>
                     <option value="A+" >A+</option>
-                    <option value="A_" >A-</option>
+                    <option value="A-" >A-</option>
                     <option value="B+" >B+</option>
                     <option value="B-" >B-</option>
                     <option value="AB+" >AB+</option>
