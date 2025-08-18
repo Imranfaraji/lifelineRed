@@ -43,11 +43,17 @@ const Footer = () => {
             <li>
               <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/blog'}>Blog</NavLink>
             </li>
-           {
-            user&& <li>
-              <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/funding'}>Funding</NavLink>
-            </li>
-           }
+            {
+                       user&& <>
+                       <li>
+                         <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/donor'}>All Donor</NavLink>
+                       </li>
+                       <li>
+                         <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/funding'}>Funding</NavLink>
+                       </li>
+                       
+                       </>
+                      }
             
           </ul>
           </div>

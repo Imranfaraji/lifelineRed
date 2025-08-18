@@ -1,13 +1,16 @@
 import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
 const Nav = () => {
   const { user, handlesignOut } = useContext(AuthContext);
+  const location=useLocation()
+
+  console.log(location)
 
   const [toggle,setToggle]=useState(false)
   return (
-    <div className="w-full bg-white fixed z-50 opacity-90 shadow-sm">
+    <div className={`w-full bg-white ${location.pathname==='/'?'fixed':""} z-50 opacity-90 shadow-sm`}>
       <div className="navbar responsive">
         <div className="navbar-start ">
           <div className="dropdown">
@@ -41,10 +44,16 @@ const Nav = () => {
             <li>
               <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/blog'}>Blog</NavLink>
             </li>
-           {
-            user&& <li>
+            {
+            user&& <>
+            <li>
+              <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/donor'}>All Donor</NavLink>
+            </li>
+            <li>
               <NavLink className={({isActive})=>isActive?'text-red-500 font-bold':'text-gray-600'} to={'/funding'}>Funding</NavLink>
             </li>
+            
+            </>
            }
             </ul>
           </div>

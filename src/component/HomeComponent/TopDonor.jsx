@@ -2,6 +2,7 @@ import React from 'react';
 import useAxiosPublic from '../../utilitis/Hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
 import Loading from '../../pages/Loading/Loading';
+import { Link } from 'react-router';
 
 const TopDonor = () => {
     const axiosPublic=useAxiosPublic()
@@ -58,9 +59,9 @@ const TopDonor = () => {
         </p>
 
         {/* Button */}
-        <button className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
+        <Link to={`/donor-profile/${donor._id}`} className="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
           View Profile
-        </button>
+        </Link>
       </div>
             ))
         }

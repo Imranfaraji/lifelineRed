@@ -30,6 +30,7 @@ import Blogs from "../../pages/Blogs/Blogs";
 import Blog from "../../pages/Blogs/Blog";
 import GiveFundPage from "../../pages/Funding/GiveFundPage";
 import AllDonor from "../../pages/AllDonor/AllDonor";
+import DonorProfile from "../HomeComponent/DonorProfile";
 
 
 
@@ -56,6 +57,9 @@ import AllDonor from "../../pages/AllDonor/AllDonor";
         {
           path:'donor',
           Component:AllDonor
+        },{
+             path:'/donor-profile/:id',
+             Component:DonorProfile
         },
 
         
